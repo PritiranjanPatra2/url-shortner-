@@ -6,7 +6,7 @@ function App() {
   const [url,setUrl]=useState('');
   const [shortUrl,setShortUrl]=useState('');
    async function handle(){
-    const res=await axios.post(`http://localhost:5000/newUrl`,{
+    const res=await axios.post(`https://url-shortner-vcg8.onrender.com/newUrl`,{
       url:url
     })
     console.log(res.data);
