@@ -208,3 +208,18 @@ a:active {
     padding: 30px 20px;
   }
 }
+.loading-message {
+  color: #764ba2;
+  margin-top: 10px;
+  font-size: 14px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
