@@ -5,11 +5,11 @@ import './App.css';
 function App() {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
-  const [loading, setLoading] = useState(false); // State to manage loading status
+  const [loading, setLoading] = useState(false); 
 
   async function handle() {
     if (!url) return;
-    setLoading(true); // Set loading to true when the request starts
+    setLoading(true); 
     try {
       const res = await axios.post(`https://url-shortner-vcg8.onrender.com/newUrl`, {
         url: url
@@ -18,7 +18,7 @@ function App() {
     } catch (error) {
       console.error('Error shortening URL:', error);
     } finally {
-      setLoading(false); // Set loading to false when the request is complete
+      setLoading(false);
     }
   }
 
@@ -34,9 +34,9 @@ function App() {
           onChange={(e) => setUrl(e.target.value)} 
         />
         <button onClick={handle} disabled={loading}>
-          {loading ? 'Shortening...' : 'Shorten'} {/* Display loading text when loading */}
+          {loading ? 'Shortening...' : 'Shorten'} 
         </button>
-        {loading && <p className="loading-message">Loading...</p>} {/* Loading message */}
+        {loading && <p className="loading-message">Loading...</p>} 
         {shortUrl && (
           <a href={shortUrl} target='_blank' rel="noopener noreferrer">
             {shortUrl}
